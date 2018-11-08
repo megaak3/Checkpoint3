@@ -1,0 +1,79 @@
+﻿
+@{
+                /**/
+
+                /**/
+
+                ViewBag.Title = "Email";
+}
+
+<h2>Email</h2>
+<!--Shows default email message with parameters-->
+@ViewBag.content
+
+<!--Sending email-->
+@{
+    try
+    {
+
+        //Configuring webMail class to send emails
+        WebMail.SmtpServer = "smtp.gmail.com"; //gmail smtp server
+        WebMail.SmtpPort = 587; //gmail port to send emails
+        WebMail.SmtpUseDefaultCredentials = true;
+        WebMail.EnableSsl = true; //sending emails with secure protocol
+        WebMail.UserName = "megaak3@gmail.com";//EmailId used to send emails from application
+        WebMail.Password = "132456a!"; //please ignore this password.
+        WebMail.From = "megaak3@gmail.com"; //email sender email address.
+
+        //Sending email
+        WebMail.Send(to: ViewBag.email, subject: "Hello " + ViewBag.name + " This is Andrew Keeley", body: "This is my email. Please give me the extra credit.", isBodyHtml: true);
+        <hr />
+        <div class="text-success">
+            Email Sent Successfully.
+        </div>
+    }
+    catch (Exception)
+    {
+        <div class="text-danger">
+            Problem while sending email, please check gmail server details.
+        </div>
+    }
+}
+<!--
+protected void btn_send_Click(object sender, EventArgs e)
+{
+
+    System.Net.Mail.MailMessage mail = new System.Net.Mail.MailMessage();
+    mail.To.Add(email);
+    mail.From = new MailAddress("megaak3@gmail.com", "Hello", System.Text.Encoding.UTF8);
+    mail.Subject = "This mail is sent from Andrew Keeley's blowout homework";
+    mail.SubjectEncoding = System.Text.Encoding.UTF8;
+    mail.Body = "Hello TA, " + name + " ,or Dr. Anderson. Please give me the 5 extra points";
+    mail.BodyEncoding = System.Text.Encoding.UTF8;
+    mail.IsBodyHtml = true;
+    mail.Priority = MailPriority.High;
+    SmtpClient client = new SmtpClient();
+    client.Credentials = new System.Net.NetworkCredential("megaak3@gmail.com", "password");
+    client.Port = 587;
+    client.Host = "smtp.gmail.com";
+    client.EnableSsl = true;
+    try
+    {
+        client.Send(mail);
+        Page.RegisterStartupScript("UserMsg", "
+<script>alert('Successfully Send...'); if (alert) { window.location = 'email/' + name + "/" + email; }</script>");
+    }
+    catch (Exception ex)
+    {
+        Exception ex2 = ex;
+        string errorMessage = string.Empty;
+        while (ex2 != null)
+        {
+            errorMessage += ex2.ToString();
+            ex2 = ex2.InnerException;
+        }
+        Page.RegisterStartupScript("UserMsg", "
+<script>alert('Sending Failed...'); if (alert) { window.location = 'email/' + name + "/" + email; }</script>");
+    }
+}
+-->

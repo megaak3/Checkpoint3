@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Blow Out";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to Blow Out!</h1>
+    <p class="lead">We blow our competitors out of the water</p>
+    <p><a href='@Url.Action("About", "Home")' class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2> What the legends say</h2>
+        <p class="blockQuote">
+            "It's easy to play any musical instrument: all you have to do is touch the right 
+            key at the right time and the instrument will play itself.”  - Johann Sebastian Bach
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>What we do</h2>
+        <p>This website allows you to rent the best high quality instruments at blow out prices. It also can send you emails for extra credit..</p>
+        <p><a class="btn btn-default" href="@Url.Action("rentals", "Home")">Rentals &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Trumpet</h2>
+        <img src="~/trumpet.jpg" alt=" Trumpet" width="200"/>
+    </div>
+</div>
