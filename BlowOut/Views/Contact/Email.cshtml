@@ -2,35 +2,37 @@
 @{
     ViewBag.Title = "Email";
 }
+<!--Jumbotron with title-->
+<div class="jumbotron">
+    <h2>Email</h2>
+    <!--Shows default email message with parameters-->
+    @ViewBag.content
 
-<h2>Email</h2>
-<!--Shows default email message with parameters-->
-@ViewBag.content
+    <!--Sending email-->
+    @{
+        try
+        {
 
-<!--Sending email-->
-@{
-    try
-    {
-
-        //Configuring webMail class to send emails
-        WebMail.SmtpServer = "smtp.gmail.com"; //gmail smtp server
-        WebMail.SmtpPort = 587; //gmail port to send emails
-        WebMail.SmtpUseDefaultCredentials = true;
-        WebMail.EnableSsl = true; //sending emails with secure protocol
-        WebMail.UserName = "megaak6@gmail.com";//EmailId used to send emails from application
-        WebMail.Password = "BoiseState"; //please ignore this password.
-        WebMail.From = "megaak6@gmail.com"; //email sender email address.
-        //Sending email
-        WebMail.Send(to: ViewBag.email, subject: "Hello " + ViewBag.name + " This is Andrew Keeley", body: "This is my email. Please give me the extra credit.", isBodyHtml: true);
-        <hr />
-        <div class="text-success">
-            Email Sent Successfully.
-        </div>
+            //Configuring webMail class to send emails
+            WebMail.SmtpServer = "smtp.gmail.com"; //gmail smtp server
+            WebMail.SmtpPort = 587; //gmail port to send emails
+            WebMail.SmtpUseDefaultCredentials = true;
+            WebMail.EnableSsl = true; //sending emails with secure protocol
+            WebMail.UserName = "megaak6@gmail.com";//EmailId used to send emails from application
+            WebMail.Password = "BoiseState"; //please ignore this password.
+            WebMail.From = "megaak6@gmail.com"; //email sender email address.
+                                                //Sending email
+            WebMail.Send(to: ViewBag.email, subject: "Hello " + ViewBag.name + " This is Andrew Keeley", body: "This is my email. Please give me the extra credit.", isBodyHtml: true);
+            <hr />
+            <div class="text-success">
+                Email Sent Successfully.
+            </div>
+        }
+        catch (Exception)
+        {
+            <div class="text-danger">
+                Problem while sending email, please check gmail server details.
+            </div>
+        }
     }
-    catch (Exception)
-    {
-        <div class="text-danger">
-            Problem while sending email, please check gmail server details.
-        </div>
-    }
-}
+</div>

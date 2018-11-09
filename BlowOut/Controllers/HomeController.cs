@@ -16,15 +16,11 @@ namespace BlowOut.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "What is Blow Out about.";
-
             return View();
         }
 
         public ActionResult Rentals()
         {
-            ViewBag.Message = "Here are our available options:";
-
             return View();
         }
 
