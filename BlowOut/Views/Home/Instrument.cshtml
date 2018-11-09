@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Insturment";
+}
+
+<section style="padding-top: 50px;">
+<div class="row">
+    <div class="col-md-6 text-center">
+        <h2>@ViewBag.Insturment</h2>
+        <img style="max-width: 33%" src="~/Images/@ViewBag.Image" /> 
+    </div>
+    <div class="col-md-6">
+        <div class="col-md-12">
+            <h2>Pricing</h2>
+            <ul class="nav nav-pills">
+                <li class="presentation">
+                    <a class="btn btn-primary active" style="margin-right: 10px;" data-toggle="tab" role="tab" href="#new">New</a>
+                </li>
+                <li>
+                    <a class="btn btn-primary" data-toggle="tab" role="tab" href="#used">Used</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-12" style="margin-top: 45px;">
+            <div class="tab-content">
+                <div class="tab-pane active" id="new">
+                    The price for a new @ViewBag.Insturment is $@ViewBag.New
+                </div>
+                <div class="tab-pane" id="used">
+                    The price for a used @ViewBag.Insturment is $@ViewBag.Used
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    
+
+
+</div>
+</section>
+
