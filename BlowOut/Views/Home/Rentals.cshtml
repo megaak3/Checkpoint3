@@ -11,55 +11,73 @@
 <button onclick="one()">1</button>
 <button onclick="two()">2</button>
 <button onclick="four()">4</button>
+<button onclick="five()">5</button>
 
 <script>
-// Get the elements with class="column"
-var elements = document.getElementsByClassName("column");
+    // Get the elements with class="column"
+    var elements = document.getElementsByClassName("column");
 
-// Declare a "loop" variable
-var i;
+    // Declare a "loop" variable
+    var i;
 
-// Full-width images
-function one() {
-    for (i = 0; i < elements.length; i++) {
-        elements[i].style.flex = "100%";
+    // Full-width images
+    function one() {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.flex = "100%";
+        }
     }
-}
 
-// Two images side by side
-function two() {
-    for (i = 0; i < elements.length; i++) {
-        elements[i].style.flex = "50%";
+    // Two images side by side
+    function two() {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.flex = "50%";
+        }
     }
-}
 
-// Four images side by side
-function four() {
-    for (i = 0; i < elements.length; i++) {
-        elements[i].style.flex = "25%";
+    // Four images side by side
+    function four() {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.flex = "25%";
+        }
     }
-}
+    // Four images side by side
+    function five() {
+        for (i = 0; i < elements.length; i++) {
+            elements[i].style.flex = "20%";
+        }
+    }
 </script>
 
 <div class="row">
     <div class="column">
-
-        <img src="~/trumpet.jpg" width="200" />
+        <a href='@Url.Action("Trumpet" ,"Instrument", "Home")'>
+           <img src="~/trumpet.jpg" width="200" />
+        </a>
     </div>
     <div class="column">
-        <img src="~/saxaphone.jpg" width="200" />
+        <a href='@Url.Action("Saxaphone","Instrument", "Home")'>
+            <img src="~/saxaphone.jpg" width="200" />
+        </a>
     </div>
     <div class="column">
-        <img src="~/Trombone.jpg" width="200" />
+        <a href='@Url.Action("Trombone","Instrument", "Home")'>
+            <img src="~/Images/Trombone.jpg" width="200" />
+        </a>
     </div>
     <div class="column">
-        <img src="~/Tuba.jpg" width="200" />
+        <a href='@Url.Action("Tuba","Instrument", "Home")'>
+            <img src="~/Images/Tuba.jpg" width="200" />
+        </a>
     </div>
     <div class="column">
-        <img src="Flute" width="200" />
+        <a href='@Url.Action("Flute","Instrument", "Home")'>
+            <img src="~/Flute.JPG" width="200" />
+        </a>
     </div>
     <div class="column">
-        <img src="~/clarinet.jpg" width="200" />
+        <a href='@Url.Action("Clarinet","Instrument", "Home")'>
+            <img src="~/clarinet.jpg" width="200" />
+        </a>
     </div>
 
 </div>
