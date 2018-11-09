@@ -2,30 +2,12 @@
     ViewBag.Title = "Rentals";
 }
 
-<head>
-    .row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-    }
-
-    /* Create two equal columns that sits next to each other */
-    .column {
-    flex: 50%;
-    padding: 0 4px;
-    }
-
-    .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-    }
-</head>
 <div class="jumbotron">
     <h2>@ViewBag.Title</h2>
     <h3>@ViewBag.Message</h3>
     <p><a href='@Url.Action("About", "Home")' class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
-
+<h3>Pictures per row</h3>
 <button onclick="one()">1</button>
 <button onclick="two()">2</button>
 <button onclick="four()">4</button>
@@ -62,15 +44,22 @@ function four() {
 <div class="row">
     <div class="column">
 
-        <img src="~/trumpet.jpg"  />
+        <img src="~/trumpet.jpg" width="200" />
     </div>
     <div class="column">
-        <img src="~/French Horn.jpg"  />
+        <img src="~/saxaphone.jpg" width="200" />
     </div>
     <div class="column">
-        <img src="~/guitar.jpg"  />
+        <img src="~/Trombone.jpg" width="200" />
     </div>
     <div class="column">
-        <img src="~/kazoo.jpg" />
+        <img src="~/Tuba.jpg" width="200" />
     </div>
+    <div class="column">
+        <img src="Flute" width="200" />
+    </div>
+    <div class="column">
+        <img src="~/clarinet.jpg" width="200" />
+    </div>
+
 </div>
