@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+//Made by Andrew Keeley, Eric Beecher, Josh Smith, Danny Guzman
+//This is the Home Controller
 namespace BlowOut.Controllers
 {
     public class HomeController : Controller
@@ -15,7 +16,7 @@ namespace BlowOut.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "What is Blow Out all about.";
+            ViewBag.Message = "What is Blow Out about.";
 
             return View();
         }
