@@ -168,7 +168,9 @@
     <Content Include="Images\Flute.JPG" />
     <Content Include="Images\French Horn.jpg" />
     <Content Include="Images\guitar.jpg" />
+    <Content Include="Images\instruments.png" />
     <Content Include="Images\kazoo.jpg" />
+    <Content Include="Images\musicalinstruments.gif" />
     <Content Include="Images\saxaphone.jpg" />
     <Content Include="Images\Trombone.jpg" />
     <Content Include="Images\trumpet.jpg" />
