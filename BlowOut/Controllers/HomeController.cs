@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BlowOut.DAL;
+using BlowOut.Models;
+
+
 //Made by Andrew Keeley, Eric Beecher, Josh Smith, Danny Guzman
 //This is the Home Controller
 namespace BlowOut.Controllers
 {
     public class HomeController : Controller
     {
+        private InstrumentContext db = new InstrumentContext();
+
         public ActionResult Index()
         {
             return View();
